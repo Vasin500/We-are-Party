@@ -1,0 +1,144 @@
+body {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* เพิ่มเข้ามาเพื่อซ่อน scrollbar ที่อาจเกิดตอนปัดการ์ด */
+}
+
+.container {
+    padding: 20px;
+    display: flex; /* เพิ่มเพื่อให้ container จัดการเนื้อหาภายในได้ดีขึ้น */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* --- Menu Page --- */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.menu-button.disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* --- Minigame & DeepTalk Page --- */
+.card {
+    width: 250px;
+    height: 350px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* ปรับให้แสดงข้อความหลายบรรทัดได้สวยงาม */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: grab; /* เปลี่ยน cursor ให้เหมือนลากได้ */
+    user-select: none; /* ป้องกันการเลือกข้อความบนการ์ดตอนปัด */
+    position: relative; /* เพิ่ม position เพื่อจัดการ transform ได้ดีขึ้น */
+}
+
+.card:active {
+    cursor: grabbing;
+}
+button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-family: 'Kanit', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+#end-game-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    min-height: 58px; /* จองพื้นที่ไว้ กันหน้าจอกระตุกตอนปุ่มแสดง */
+}
+
+#restart-button {
+    background-color: #2ecc71;
+}
+
+#restart-button:hover {
+    background-color: #27ae60;
+}
+
+
+/* --- Style for Back to Menu Link --- */
+.back-to-menu {
+    margin-top: 40px;
+    min-height: 24px; /* จองพื้นที่ไว้ */
+}
+
+.back-to-menu a {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.back-to-menu a:hover {
+    color: #ecf0f1;
+}
+
+/* --- Card In/Out Animation --- */
+.card-exit {
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.card-enter {
+    opacity: 0; /* เริ่มต้นด้วยความโปร่งใส */
+    transform: scale(0.9); /* เริ่มต้นด้วยขนาดที่เล็กกว่าปกติเล็กน้อย */
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in; /* Animation ตอนปรากฏ */
+}
+
+.card-active {
+    opacity: 1; /* แสดงผลเต็มที่ */
+    transform: scale(1); /* กลับมาขนาดปกติ */
+}
