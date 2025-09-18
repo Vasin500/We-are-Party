@@ -6,7 +6,11 @@ const restartButton = document.getElementById('restart-button');
 
 // --- Game State ---
 const MAX_DRAWS_PER_CARD = 4;
-const initialCards = ['ดื่มคนเดียว', 'ซ้ายดื่ม', 'ขวาดื่ม'];
+const initialCards = [
+    'ดื่มคนเดียว','ซ้ายดื่ม','ขวาดื่ม','หาเพื่อนดื่ม','เลือก2คนดื่ม',
+    'Alon(เพื่อนตอบเพื่อนโดน)','หัวหน้า(ถ้ายืนทุกคนต้องยืนตาม)','ดื่มรอบวง','เเข่งจ้องตาคนทางขวาเเพ้ดื่ม','พัก',
+    'คนที่3ฝั่งซ้ายดื่ม','คนที่4ฝั่งขวาดื่ม','มินิเกม(คิดเอง)','บัดดี้(หาคนเเข่งเเพ้เป็นบัดดี้)','เเข่งจ้องตาคนทางซ้ายเเพ้ดื่ม'
+];
 let cardCounts = {};
 let totalDraws = 0;
 const totalPossibleDraws = initialCards.length * MAX_DRAWS_PER_CARD;
